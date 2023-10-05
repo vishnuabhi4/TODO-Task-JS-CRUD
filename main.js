@@ -8,6 +8,7 @@ let add = document.getElementById("add");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     formValidation();
   });
   
@@ -20,3 +21,17 @@ form.addEventListener("submit", (e) => {
       msg.innerHTML = "";
     }
   };
+
+  let data = [];
+
+let acceptData = () => {
+  data.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textarea.value,
+  });
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  console.log(data);
+};
