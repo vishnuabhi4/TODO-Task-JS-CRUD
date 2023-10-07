@@ -43,6 +43,12 @@ let acceptData = () => {
   console.log(data);
 };
 
+let resetForm = () => {
+  textInput.value = "";
+  dateInput.value = "";
+  textarea.value = "";
+};
+
 let createTasks = () => {
   tasks.innerHTML = "";
   data.map((x, y) => {
