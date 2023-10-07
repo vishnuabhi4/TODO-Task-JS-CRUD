@@ -7,8 +7,8 @@ let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
 
 form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    // e.preventDefault();
+    // e.stopPropagation();
     formValidation();
   });
   
@@ -17,8 +17,16 @@ form.addEventListener("submit", (e) => {
       console.log("failure");
       msg.innerHTML = "Task cannot be blank";
     } else {
+      acceptData();
+      add.setAttribute("data-bs-dismiss", "modal");
+      add.click();
       console.log("success");
       msg.innerHTML = "";
+
+      (() => {
+        add.setAttribute("data-bs-dismiss", "");
+      })();
+    
     }
   };
 
