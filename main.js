@@ -39,7 +39,7 @@ let acceptData = () => {
   });
 
   localStorage.setItem("data", JSON.stringify(data));
-
+  createTasks();
   console.log(data);
 };
 
@@ -59,6 +59,6 @@ let createTasks = () => {
         </div>
     `);
   });
-
+  
   resetForm();
 };
