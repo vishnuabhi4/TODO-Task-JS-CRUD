@@ -38,3 +38,9 @@ body{
   .app {
     background-color: #303436;
   }
+  .modal.fade{
+    background-color: #5d6a6d; 
+  }
+  .modal-dialog {
+    background-color: #8ec8d5;
+  }
