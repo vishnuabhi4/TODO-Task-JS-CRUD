@@ -1,26 +1,28 @@
 body{
     font-family: sans-serif;
     margin: 0 50px;
-    background-color: #7f7474;
+    background-color: rgb(24, 26, 27);
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
   }
   .app {
     background-color: #fff;
     width: 300px;
     height: 500px;
-    border: 5px solid #48b2cf;
+    border: 5px solid #5d6a6d;
     border-radius: 8px;
     padding: 15px;
+    
   }
   #addNew {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(171, 206, 161, 0.35);
+    background-color: rgba(229, 235, 227, 0.35);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -32,4 +34,7 @@ body{
   }
   #msg {
     color: red;
+  }
+  .app {
+    background-color: #303436;
   }
