@@ -41,4 +41,6 @@ It's also used in automated testing and scripting to simulate user interactions 
 * `add.setAttribute("data-bs-dismiss", "modal");`
 In this case, you are setting the data-bs-dismiss attribute to the value "modal." This is often used in frameworks like Bootstrap to specify that a particular HTML element, when clicked, should dismiss or close a modal dialog associated with it. The "modal" value indicates the desired behavior.
 * `add.setAttribute("data-bs-dismiss", "");`
-Here, you are setting the data-bs-dismiss attribute to an empty string (""). This effectively removes the value associated with the attribute. In some cases, removing the attribute's value can disable or reset its behavior. It may no longer trigger the associated action.
+* setting the data-bs-dismiss attribute to an empty string (""). This effectively removes the value associated with the attribute. In some cases, removing the attribute's value can disable or reset its behavior. It may no longer trigger the associated action.
+In the first case, you're assigning a specific value ("modal") that typically indicates a particular behavior (e.g., closing a modal).
+In the second case, you're removing the value by assigning an empty string, which might change or reset the behavior associated with the attribute, depending on how it's used in the underlying code or framework.
