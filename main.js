@@ -5,6 +5,7 @@ let textarea = document.getElementById("textarea");
 let msg = document.getElementById("msg");
 let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
+//The 'add' variable is initially assigned a 'reference' to the HTML button element with the id "add" in your web page
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -21,7 +22,6 @@ let formValidation = () => {
     acceptData();
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
-
     (() => {
       add.setAttribute("data-bs-dismiss", "");
     })();
@@ -64,6 +64,7 @@ let createTasks = () => {
 };
 
 let deleteTask = (e) => {
+ 
   e.parentElement.parentElement.remove();
   data.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("data", JSON.stringify(data));
