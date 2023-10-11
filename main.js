@@ -22,6 +22,7 @@ let formValidation = () => {
     acceptData();
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
+    //Stimulates a user clicking that element
     (() => {
       add.setAttribute("data-bs-dismiss", "");
     })();
