@@ -62,3 +62,6 @@ let acceptData = () => {
 };
 
 ```
+* `let data = [{}];` This line initializes an array called data with an empty object as its first element. This array will be used to store data objects representing tasks.
+* `let acceptData = () => { ... };` This is the definition of a function named acceptData. This function will be called when a specific action occurs (likely when a user submits a form).
+* `data.push({ ... });` Inside the acceptData function, a new object is created and pushed into the data array. This object represents a task and contains three properties: text, date, and description. These properties are filled with values extracted from the textInput, dateInput, and textarea elements.
