@@ -44,3 +44,21 @@ In this case, you are setting the data-bs-dismiss attribute to the value "modal.
 * setting the data-bs-dismiss attribute to an empty string (""). This effectively removes the value associated with the attribute. In some cases, removing the attribute's value can disable or reset its behavior. It may no longer trigger the associated action.
 In the first case, you're assigning a specific value ("modal") that typically indicates a particular behavior (e.g., closing a modal).
 In the second case, you're removing the value by assigning an empty string, which might change or reset the behavior associated with the attribute, depending on how it's used in the underlying code or framework.
+```
+
+let data = [{}];
+
+let acceptData = () => {
+  data.push({
+    text: textInput.value,
+    date: dateInput.value,
+    description: textarea.value,
+  });
+
+  localStorage.setItem("data", JSON.stringify(data));
+
+  console.log(data);
+  createTasks();
+};
+
+```
