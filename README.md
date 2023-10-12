@@ -90,3 +90,14 @@ let createTasks = () => {
 };
 ```
 `tasks.innerHTML = "";` This line clears the contents of the HTML element with the id "tasks." It effectively removes any previously displayed tasks.
+
+#### Sample map() method
+```
+// The map method is used to iterate over the data array. 
+const numbers = [65, 44, 12, 4];
+const newArr = numbers.map(myFunction)
+
+function myFunction(num) {
+  return num * 10;
+}
+```
