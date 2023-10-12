@@ -66,3 +66,27 @@ let acceptData = () => {
 * `let acceptData = () => { ... };` This is the definition of a function named acceptData. This function will be called when a specific action occurs (likely when a user submits a form).
 * `data.push({ ... });` Inside the acceptData function, a new object is created and pushed into the data array. This object represents a task and contains three properties: text, date, and description. These properties are filled with values extracted from the textInput, dateInput, and textarea elements.
 * `localStorage.setItem("data", JSON.stringify(data));` After adding a new task to the data array, the entire data array is converted to a JSON string using JSON.stringify. Then, it's stored in the browser's localStorage under the key "data." This allows the data to persist between page reloads.
+```
+let createTasks = () => {
+  tasks.innerHTML = ""; // Clear the contents of the 'tasks' element.
+
+  // Use the 'map' method to iterate over the 'data' array and generate HTML for each task.
+  data.map((x, y) => {
+    return (tasks.innerHTML += `
+      <div id=${y}>
+        <span class="fw-bold">${x.text}</span>
+        <span class="small text-secondary">${x.date}</span>
+        <p>${x.description}</p>
+
+        <span class="options">
+          <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+          <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+        </span>
+      </div>
+    `);
+  });
+
+  resetForm(); // Call the 'resetForm' function, likely to clear the form inputs.
+};
+```
+`tasks.innerHTML = "";` This line clears the contents of the HTML element with the id "tasks." It effectively removes any previously displayed tasks.
