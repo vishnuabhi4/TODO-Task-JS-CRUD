@@ -116,3 +116,7 @@ data.map((x, y) => {
   // ... HTML template for each task
 });
 ```
+```
+map(callbackFn)
+map(callbackFn, thisArg)
+```
