@@ -90,6 +90,8 @@ let createTasks = () => {
 };
 ```
 `tasks.innerHTML = "";` This line clears the contents of the HTML element with the id "tasks." It effectively removes any previously displayed tasks.
+`data.map((x, y) => { ... });` The map method is used to iterate over the data array. For each task object in the array (x), it generates HTML code for that task. The y variable is likely the index of the task within the array.
+
 
 #### Sample map() method
 ```
@@ -101,3 +103,4 @@ function myFunction(num) {
   return num * 10;
 }
 ```
+* `${y}:` The ${y} is using JavaScript template literals to interpolate the value of the y variable into the HTML. In the context of the code, y is likely an index that corresponds to the position of the task within the data array. So, for each task, the id attribute will be unique based on its position in the array.
