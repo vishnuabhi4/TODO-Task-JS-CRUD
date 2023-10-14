@@ -104,3 +104,15 @@ function myFunction(num) {
 }
 ```
 * `${y}:` The ${y} is using JavaScript template literals to interpolate the value of the y variable into the HTML. In the context of the code, y is likely an index that corresponds to the position of the task within the data array. So, for each task, the id attribute will be unique based on its position in the array.
+
+* `x and y` are indeed parameters of the map method's callback function. This code is using the map method to iterate over the data array, and for each element in the array, the callback function is called with two parameters:
+
+* `x:` This parameter represents the current element in the array, which in this context is each task object. So, x is a reference to the current task being processed.
+
+* `y:` This parameter represents the index of the current element in the array. It indicates the position of the task within the array. y is an integer that represents the index of the current task.
+
+```
+data.map((x, y) => {
+  // ... HTML template for each task
+});
+```
