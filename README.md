@@ -120,3 +120,16 @@ data.map((x, y) => {
 map(callbackFn)
 map(callbackFn, thisArg)
 ```
+* The map() method is an iterative method. It calls a provided callbackFn function once for each element in an array and constructs a new array from the results.
+```
+          <span class="options">
+            <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
+            <i onClick ="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>
+          </span>
+```
+* `<span class="options">`: This span element is used to group the task options, which typically include an "Edit" option and a "Delete" option.
+* <i onClick="editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>: This i element represents the "Edit" option. Let's break down its attributes and behavior:
+`onClick="editTask(this)":` This onClick attribute specifies that when the "Edit" icon is clicked, it should call the editTask function and pass the this reference as an argument. The this reference typically represents the clicked icon, allowing you to identify which task is being edited.
+`data-bs-toggle="modal" data-bs-target="#form":` These are Bootstrap attributes used to open a modal with the id "form" when the "Edit" icon is clicked. This is typically used for editing the task.
+* <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>: This i element represents the "Delete" option. Here's what it does:
+`onClick="deleteTask(this);createTasks()":` This onClick attribute specifies that when the "Delete" icon is clicked, it should first call the deleteTask function, passing the this reference as an argument (likely to identify which task is being deleted). After that, it calls the createTasks function. This sequence of actions typically deletes the task and then refreshes the list of tasks
