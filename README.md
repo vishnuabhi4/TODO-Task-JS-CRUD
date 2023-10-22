@@ -133,3 +133,30 @@ map(callbackFn, thisArg)
 `data-bs-toggle="modal" data-bs-target="#form":` These are Bootstrap attributes used to open a modal with the id "form" when the "Edit" icon is clicked. This is typically used for editing the task.
 * <i onClick="deleteTask(this);createTasks()" class="fas fa-trash-alt"></i>: This i element represents the "Delete" option. Here's what it does:
 `onClick="deleteTask(this);createTasks()":` This onClick attribute specifies that when the "Delete" icon is clicked, it should first call the deleteTask function, passing the this reference as an argument (likely to identify which task is being deleted). After that, it calls the createTasks function. This sequence of actions typically deletes the task and then refreshes the list of tasks
+```
+let deleteTask = (e) => {
+  // Remove the task element from the DOM
+  e.parentElement.parentElement.remove();
+
+  // Get the task's ID from the parent element's ID
+  const taskId = e.parentElement.parentElement.id;
+
+  // Remove the task data from the 'data' array using the ID as an index
+  data.splice(taskId, 1);
+
+  // Update the 'data' in localStorage
+  localStorage.setItem("data", JSON.stringify(data));
+
+  // Log the updated 'data' to the console
+  console.log(data);
+};
+```
+* `e:` This parameter represents the element that triggered the delete action (likely an icon or button). It is passed as an argument to the function.
+
+* `e.parentElement.parentElement.remove():` This line of code removes the parent element of the e element (twice) from the DOM. This effectively removes the entire task element associated with the delete action.
+
+* `const taskId = e.parentElement.parentElement.id;`: This line retrieves the id attribute from the parent element of the clicked element. This ID is likely used to identify the specific task in the data array.
+
+* `data.splice(taskId, 1):` This line uses the splice method to remove one element from the data array at the index specified by taskId. This corresponds to the specific task being deleted.
+
+* `localStorage.setItem("data", JSON.stringify(data))`: This line updates the data in the browser's localStorage to reflect the changes made by removing a task from the array.

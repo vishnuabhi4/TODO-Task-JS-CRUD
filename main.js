@@ -89,7 +89,10 @@ let resetForm = () => {
   textarea.value = "";
 };
 /* In JavaScript, there are two ways to declare functions: using the function keyword 
-and using arrow function expressions (=>). that is without function keyword */
+and using arrow function expressions (=>). ie without function keyword. 
+The key difference is that arrow function expressions use a shorter syntax and do not 
+introduce a new this context, making them especially useful for simple, self-contained functions 
+like the resetForm function in code.*/
 
 (() => {
   data = JSON.parse(localStorage.getItem("data")) || []
