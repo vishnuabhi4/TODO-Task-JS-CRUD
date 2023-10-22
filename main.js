@@ -88,6 +88,9 @@ let resetForm = () => {
   dateInput.value = "";
   textarea.value = "";
 };
+/* In JavaScript, there are two ways to declare functions: using the function keyword 
+and using arrow function expressions (=>). that is without function keyword */
+
 (() => {
   data = JSON.parse(localStorage.getItem("data")) || []
   console.log(data);
