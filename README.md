@@ -158,5 +158,14 @@ let deleteTask = (e) => {
 * `const taskId = e.parentElement.parentElement.id;`: This line retrieves the id attribute from the parent element of the clicked element. This ID is likely used to identify the specific task in the data array.
 
 * `data.splice(taskId, 1):` This line uses the splice method to remove one element from the data array at the index specified by taskId. This corresponds to the specific task being deleted.
+`syntax` = array.splice(index, howmany, item1, ....., itemX)
+`index` =	Required.
+The position to add/remove items.
+Negative value defines the position from the end of the array.
+`howmany` =	Optional.
+Number of items to be removed.
+`item1, ..., itemX` =	Optional.
+New elements(s) to be added.
+
 
 * `localStorage.setItem("data", JSON.stringify(data))`: This line updates the data in the browser's localStorage to reflect the changes made by removing a task from the array.
