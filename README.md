@@ -156,6 +156,13 @@ let deleteTask = (e) => {
 * `e.parentElement.parentElement.remove():` This line of code removes the parent element of the e element (twice) from the DOM. This effectively removes the entire task element associated with the delete action.
 
 * `const taskId = e.parentElement.parentElement.id;`: This line retrieves the id attribute from the parent element of the clicked element. This ID is likely used to identify the specific task in the data array.
+`e:` This is a reference to an HTML element (likely an icon or button) that triggered some action. It's assumed that this element has a parent element.
+
+`.parentElement:` This is a property that accesses the direct parent element of the element referenced by e. It represents the first level of parent-child relationship.
+
+`.parentElement:` This is again a property, and it accesses the parent element of the parent element. In other words, it accesses the grandparent element of the element referenced by e.
+
+`.remove():` This is a method that is called on the grandparent element, and it removes that element and all its descendants from the DOM.
 
 * `data.splice(taskId, 1):` This line uses the splice method to remove one element from the data array at the index specified by taskId. This corresponds to the specific task being deleted.
 `syntax` = array.splice(index, howmany, item1, ....., itemX)
