@@ -151,18 +151,22 @@ let deleteTask = (e) => {
   console.log(data);
 };
 ```
-* `e:` This parameter represents the element that triggered the delete action (likely an icon or button). It is passed as an argument to the function.
+#### Parent element DOM study
 
-* `e.parentElement.parentElement.remove():` This line of code removes the parent element of the e element (twice) from the DOM. This effectively removes the entire task element associated with the delete action.
+* In the deleteTask function, the line `e.parentElement.parentElement.remove()` is used to remove the grandparent element of the HTML element referenced by e from the DOM.
 
-* `const taskId = e.parentElement.parentElement.id;`: This line retrieves the id attribute from the parent element of the clicked element. This ID is likely used to identify the specific task in the data array.
-`e:` This is a reference to an HTML element (likely an icon or button) that triggered some action. It's assumed that this element has a parent element.
+* `e:` This represents an HTML element (likely an icon or button) that triggered the delete action. This element is assumed to have a parent element.
 
-`.parentElement:` This is a property that accesses the direct parent element of the element referenced by e. It represents the first level of parent-child relationship.
+* `.parentElement:` This property accesses the direct parent element of the element referenced by e. It represents the first level of the parent-child relationship.
 
-`.parentElement:` This is again a property, and it accesses the parent element of the parent element. In other words, it accesses the grandparent element of the element referenced by e.
+* `.parentElement:` This is used again to access the parent element of the parent element, which effectively represents the grandparent element of the element referenced by e.
 
-`.remove():` This is a method that is called on the grandparent element, and it removes that element and all its descendants from the DOM.
+* `.remove():` This method is called on the grandparent element to remove it and all its descendants from the DOM.
+```
+The DOM tree mentioned here is not from the default HTML. Instead, we created a function called createTask and added some updates. These updates comprise a list of tasks displayed on the webpage, and we manipulate this HTML content within the deleteTask and editTask functions using the onclick attribute to call the functions and pass the argument 'e' to the function.
+
+We manipulate this DOM tree using the parentElement property in JavaScript(not the defalut HTML file).
+```
 
 * `data.splice(taskId, 1):` This line uses the splice method to remove one element from the data array at the index specified by taskId. This corresponds to the specific task being deleted.
 `syntax` = array.splice(index, howmany, item1, ....., itemX)
