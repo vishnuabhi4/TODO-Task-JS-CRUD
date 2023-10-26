@@ -193,4 +193,18 @@ If howmany is greater than 0, it will remove that number of elements starting fr
 if how many is not present nothing will be removed.
 ```
 
-* `localStorage.setItem("data", JSON.stringify(data))`: This line updates the data in the browser's localStorage to reflect the changes made by removing a task from the array.
+* `localStorage.setItem("data", JSON.stringify(data))`: This line updates the data in the browser's localStorage to reflect the changes made by removing a task from the array. This effectively updates the stored data with the latest version of the data array.
+
+```
+let editTask = (e) => {
+  let selectedTask = e.parentElement.parentElement;
+
+  textInput.value = selectedTask.children[0].innerHTML;
+  dateInput.value = selectedTask.children[1].innerHTML;
+  textarea.value = selectedTask.children[2].innerHTML;
+
+  deleteTask(e);
+};
+```
+* let selectedTask = e.parentElement.parentElement;: This line selects the parent element of the element referenced by e, which appears to be the grandparent element. This element represents the task you want to edit.
+* The `innerHTML` property sets or returns the HTML content (inner HTML) of an element.
