@@ -177,6 +177,20 @@ Negative value defines the position from the end of the array.
 Number of items to be removed.
 `item1, ..., itemX` =	Optional.
 New elements(s) to be added.
+* By examining the arguments you pass to splice, you can determine whether it is used to remove, add, or both remove and add elements in your code.
 
+```
+//To remove one element at index 2:
+array.splice(2, 1);
+
+//To add one element at index 2 without removing any elements:
+array.splice(2, 0, 'newElement');
+
+//To remove two elements starting from index 3 and add two new elements:
+array.splice(3, 2, 'newElement1', 'newElement2');
+
+If howmany is greater than 0, it will remove that number of elements starting from the index. 
+if how many is not present nothing will be removed.
+```
 
 * `localStorage.setItem("data", JSON.stringify(data))`: This line updates the data in the browser's localStorage to reflect the changes made by removing a task from the array.
