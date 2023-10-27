@@ -206,5 +206,7 @@ let editTask = (e) => {
   deleteTask(e);
 };
 ```
-* let selectedTask = e.parentElement.parentElement;: This line selects the parent element of the element referenced by e, which appears to be the grandparent element. This element represents the task you want to edit.
+* `let selectedTask = e.parentElement.parentElement;`: This line selects the parent element of the element referenced by e, which appears to be the grandparent element. This element represents the task you want to edit.
 * The `innerHTML` property sets or returns the HTML content (inner HTML) of an element.
+* Yes, you're correct. If x.text, x.date, and x.description are all changed to empty values, and those values are used to update the textInput, dateInput, and textarea elements, it would result in empty input fields. If the task data is empty, it could lead to an empty <div> element in the tasks container.
+* If all the task data becomes empty, it would lead to an empty task entry within the tasks container, and the <span> with the class "options" would also be empty or not displayed because there would be no content to display within that task entry.
