@@ -203,3 +203,11 @@ let editTask = (e) => {
 * The `innerHTML` property sets or returns the HTML content (inner HTML) of an element.
 * Yes, you're correct. If x.text, x.date, and x.description are all changed to empty values, and those values are used to update the textInput, dateInput, and textarea elements, it would result in empty input fields. If the task data is empty, it could lead to an empty <div> element in the tasks container.
 * If all the task data becomes empty, it would lead to an empty task entry within the tasks container, and the <span> with the class "options" would also be empty or not displayed because there would be no content to display within that task entry.
+```
+let resetForm = () => {
+  textInput.value = "";
+  dateInput.value = "";
+  textarea.value = "";
+};
+```
+* The `resetForm` function is a JavaScript function that resets the values of specific input elements to empty or blank values. It's designed to clear the values of textInput, dateInput, and textarea elements.
