@@ -148,7 +148,7 @@ let deleteTask = (e) => {
 
 * In the deleteTask function, the line `e.parentElement.parentElement.remove()` is used to remove the grandparent element of the HTML element referenced by e from the DOM.
 
-* `e:` This represents an HTML element (likely an icon or button) that triggered the delete action. This element is assumed to have a parent element.
+* `e:` This represents an HTML element (likely an icon or button) that triggered the delete action. This element is assumed to have a parent element.The `this` keyword, when used in the onClick event handler, refers to the element that triggered the event. In this case, it's the delete icon <i> element. So, in the deleteTask function, e represents this delete icon element.
 
 * `.parentElement:` This property accesses the direct parent element of the element referenced by e. It represents the first level of the parent-child relationship.
 
