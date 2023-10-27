@@ -135,21 +135,14 @@ map(callbackFn, thisArg)
 `onClick="deleteTask(this);createTasks()":` This onClick attribute specifies that when the "Delete" icon is clicked, it should first call the deleteTask function, passing the this reference as an argument (likely to identify which task is being deleted). After that, it calls the createTasks function. This sequence of actions typically deletes the task and then refreshes the list of tasks
 ```
 let deleteTask = (e) => {
-  // Remove the task element from the DOM
+ 
   e.parentElement.parentElement.remove();
-
-  // Get the task's ID from the parent element's ID
-  const taskId = e.parentElement.parentElement.id;
-
-  // Remove the task data from the 'data' array using the ID as an index
-  data.splice(taskId, 1);
-
-  // Update the 'data' in localStorage
+  data.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("data", JSON.stringify(data));
-
-  // Log the updated 'data' to the console
   console.log(data);
+  
 };
+
 ```
 #### Parent element DOM study
 
