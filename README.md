@@ -211,3 +211,18 @@ let resetForm = () => {
 };
 ```
 * The `resetForm` function is a JavaScript function that resets the values of specific input elements to empty or blank values. It's designed to clear the values of textInput, dateInput, and textarea elements.
+
+```
+(() => {
+  data = JSON.parse(localStorage.getItem("data")) || [];
+  console.log(data);
+  createTasks();
+})();
+
+```
+* It will be `automatically` invoked as soon as it's encountered in the script. It doesn't depend on any other functions or events to trigger its execution. This `IIFE` is executed immediately when the script is loaded, and it serves the purpose of initializing the application by retrieving data from local storage, logging the data, and calling the createTasks function to populate the UI with task data from local storage.
+* data = JSON.parse(localStorage.getItem("data")) || []: Inside the function, it retrieves data from the browser's localStorage. The localStorage.getItem("data") call retrieves a stored item named "data." If there's data stored, it's parsed from a JSON string into a JavaScript object using JSON.parse(). If there's no data in the storage or it's not valid JSON, an empty array [] is used as a default value. The retrieved or default data is assigned to the data variable.
+```
+Logical OR (||) Operator: The || operator is used to provide a default value in case the left side of the expression is falsy. If the value retrieved from local storage is falsy (e.g., null or undefined), then an empty array ([]) is used as the default value for data.
+```
+* createTasks(): Finally, it calls the createTasks function, presumably to populate the UI with tasks based on the retrieved or default data.
